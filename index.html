@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Sudarshan Regmi - Software Developer</title>
+    <meta name="description"
+        content="Personal website of Sudarshan Regmi, a BSc CSIT student and software developer from Nepal. Explore my projects, skills, and creative work.">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://regmisudarshan.com.np/">
+    <meta property="og:title" content="Sudarshan Regmi - Software Developer">
+    <meta property="og:description"
+        content="Personal website of Sudarshan Regmi. Explore my projects, skills, and creative work.">
+    <meta property="og:image" content="assets/images/sudarshan.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Inter and Lobster for the logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Lobster&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nepali-bg"></div>
+
+    <!-- Header -->
+    <header id="header" class="glass-card fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full shadow-lg w-auto">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center space-x-4">
+            <a href="#" class="text-3xl font-logo text-accent px-2">Sudarshan</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#about" data-lang-key="nav_about"
+                    class="text-secondary hover:text-main font-medium transition-colors duration-300">About</a>
+                <a href="#education" data-lang-key="nav_education"
+                    class="text-secondary hover:text-main font-medium transition-colors duration-300">Journey</a>
+                <a href="#work" data-lang-key="nav_work"
+                    class="text-secondary hover:text-main font-medium transition-colors duration-300">Work</a>
+                <a href="#contact" data-lang-key="nav_contact"
+                    class="text-secondary hover:text-main font-medium transition-colors duration-300">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <!-- Language Switcher -->
+                <div class="relative" id="lang-dropdown-container">
+                    <button id="lang-dropdown-button"
+                        class="glass-card p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-accent">
+                        <img id="selected-lang-flag" src="assets/images/uk.png" alt="Selected Language" class="w-6 h-6">
+                    </button>
+                    <div id="lang-dropdown-options"
+                        class="hidden absolute top-full right-0 mt-2 w-32 glass-card rounded-lg shadow-xl py-1 z-20">
+                        <a href="#"
+                            class="lang-option flex items-center space-x-3 px-4 py-2 text-secondary hover:text-main"
+                            data-lang="en">
+                            <img src="assets/images/uk.png" alt="English" class="w-6 h-6 rounded-full">
+                            <span>English</span>
+                        </a>
+                        <a href="#"
+                            class="lang-option flex items-center space-x-3 px-4 py-2 text-secondary hover:text-main"
+                            data-lang="ne">
+                            <img src="assets/images/nepal.gif" alt="Nepali" class="w-6 h-6">
+                            <span>नेपाली</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Theme Switcher -->
+                <button id="theme-switcher"
+                    class="w-12 h-6 rounded-full flex items-center transition duration-300 focus:outline-none shadow glass-card p-1">
+                    <div id="theme-indicator"
+                        class="w-5 h-5 rounded-full bg-yellow-400 dark:bg-indigo-400 transform transition-transform duration-300">
+                        <i id="theme-icon"
+                            class="fa-solid fa-sun text-white text-xs flex items-center justify-center h-full"></i>
+                    </div>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="md:hidden text-main focus:outline-none glass-card rounded-full w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-color mt-2">
+            <a href="#about" data-lang-key="nav_about_mobile"
+                class="block text-secondary hover:text-main transition duration-300 px-6 py-3">About</a>
+            <a href="#education" data-lang-key="nav_education_mobile"
+                class="block text-secondary hover:text-main transition duration-300 px-6 py-3">Journey</a>
+            <a href="#work" data-lang-key="nav_work_mobile"
+                class="block text-secondary hover:text-main transition duration-300 px-6 py-3">Work</a>
+            <a href="#contact" data-lang-key="nav_contact_mobile"
+                class="block text-secondary hover:text-main transition duration-300 px-6 py-3">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-16 md:py-24 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center mb-8 reveal">
+                    <img src="assets/images/sudarshan.jpg" alt="Sudarshan Regmi"
+                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/e2e8f0/475569?text=DBS';"
+                        class="w-40 h-40 rounded-full border-4 border-color shadow-2xl object-cover">
+                </div>
+                <h1 id="hero-greeting" data-lang-key="hero_greeting"
+                    class="text-4xl md:text-6xl font-extrabold text-main leading-tight mb-4 min-h-[80px] md:min-h-[96px]">
+                </h1>
+                <p id="hero-subtitle" data-lang-key="hero_subtitle"
+                    class="text-lg md:text-xl text-secondary min-h-[56px]"></p>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="text-center">
+                        <h2 data-lang-key="about_title"
+                            class="text-3xl font-bold mb-6 text-main relative inline-block reveal">
+                            About Me
+                            <span
+                                class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-accent rounded-full"></span>
+                        </h2>
+                    </div>
+                    <p data-lang-key="about_p1" class="text-secondary text-lg mb-6 reveal"
+                        style="transition-delay: 100ms;">
+                        Hi, I’m Sudarshan Regmi, a BSc CSIT student and software developer. I am passionate about web
+                        development, programming,
+                        and modern technologies. Through creative thinking and the use of technology, my goal is to
+                        build useful digital solutions
+                        while continuously learning new technologies and improving my skills.
+                    </p>
+                    <p data-lang-key="about_p2" class="text-secondary text-lg reveal" style="transition-delay: 200ms;">
+                        Currently, I’m focused on expanding my knowledge and skills in <strong
+                            class="font-semibold text-accent/80">Software Development</strong>. I am passionate about
+                        web development,
+                        programming, and exploring new technologies. Through creativity and technology, I aim to build
+                        useful digital
+                        solutions and meaningful experiences. My curiosity and commitment to continuous learning inspire
+                        me to grow in
+                        the field of technology.
+                    </p>
+                    <p data-lang-key="about_p3" class="text-secondary text-sm mt-6 reveal"
+                        style="transition-delay: 300ms;">
+                        <i class="fa-solid fa-location-dot mr-2"></i> Permanently from Bheerkot-04, Syangja, currently
+                        residing in
+                        Kathmandu for my studies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 data-lang-key="journey_title"
+                        class="text-3xl font-bold text-main relative inline-block reveal">
+                        My Journey
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-accent rounded-full"></span>
+                    </h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-container left reveal">
+                        <div class="timeline-content glass-card p-6 rounded-lg shadow-lg">
+                            <h3 data-lang-key="journey_card1_degree" class="text-xl font-bold text-main">B.Sc. CSIT
+                                (Bachelor of Science in Computer
+                                Science and Information Technology)</h3>
+                            <p data-lang-key="journey_card1_school" class="text-secondary font-semibold mb-2">Amrit
+                                Science Campus(Tribhuvan University), Thamel, Kathmandu</p>
+                            <p data-lang-key="journey_card1_date" class="text-accent text-sm font-bold mb-2">2024 -
+                                PRESENT (4th Semester)</p>
+                            <p data-lang-key="journey_card1_info" class="text-secondary text-sm">Tentative graduation in
+                                2028.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right reveal">
+                        <div class="timeline-content glass-card p-6 rounded-lg shadow-lg">
+                            <h3 data-lang-key="journey_card2_degree" class="text-xl font-bold text-main">+2 (Science)
+                            </h3>
+                            <p data-lang-key="journey_card2_school" class="text-secondary font-semibold mb-2">Viswa
+                                Niketan Secondary School, Tripureswor, Kathmandu</p>
+                            <p data-lang-key="journey_card2_date" class="text-accent text-sm font-bold mb-2">Graduated:
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left reveal">
+                        <div class="timeline-content glass-card p-6 rounded-lg shadow-lg">
+                            <h3 data-lang-key="journey_card3_degree" class="text-xl font-bold text-main">Secondary
+                                Education Examination (SEE)</h3>
+                            <p data-lang-key="journey_card3_school" class="text-secondary font-semibold mb-2">Shree
+                                Dabhung Thanti Secondary School,Bheerkot, Syangja</p>
+                            <p data-lang-key="journey_card3_date" class="text-accent text-sm font-bold mb-2">Graduated:
+                                2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work/Experience Section -->
+        <section id="work" class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 data-lang-key="work_title"
+                        class="text-3xl font-bold text-main relative inline-block reveal">
+                        My Work
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-accent rounded-full"></span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div
+                        class="glass-card p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 reveal">
+                        <div class="text-accent mb-4"><i class="fas fa-laugh-beam text-4xl"></i></div>
+                        <h3 data-lang-key="work_card1_title" class="text-xl font-bold text-main mb-2">Web Development
+                        </h3>
+                        <p data-lang-key="work_card1_desc" class="text-secondary">Building responsive, modern, and
+                            user-friendly websites using
+                            HTML, CSS, JavaScript, and modern web technologies.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 reveal"
+                        style="transition-delay: 100ms;">
+                        <div class="text-accent mb-4"><i class="fas fa-bullhorn text-4xl"></i></div>
+                        <h3 data-lang-key="work_card2_title" class="text-xl font-bold text-main mb-2">App Development
+                        </h3>
+                        <p data-lang-key="work_card2_desc" class="text-secondary">Creating modern, user-friendly,
+                            and high-performance mobile applications with a focus on functionality and user experience.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 reveal"
+                        style="transition-delay: 200ms;">
+                        <div class="text-accent mb-4"><i class="fas fa-film text-4xl"></i></div>
+                        <h3 data-lang-key="work_card3_title" class="text-xl font-bold text-main mb-2">UI/UX Design
+                        </h3>
+                        <p data-lang-key="work_card3_desc" class="text-secondary"> Designing clean, intuitive,
+                            and visually appealing user interfaces that provide a great user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 data-lang-key="contact_title" class="text-3xl font-bold mb-4 text-main reveal">Let's
+                        Collaborate!</h2>
+                    <p data-lang-key="contact_subtitle" class="text-secondary text-lg mb-8 reveal"
+                        style="transition-delay: 100ms;">
+                        Have a project in mind or want to discuss an idea? Reach out to me.
+                    </p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sudarshanregmi22@gmail.com"
+                        class="btn-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block reveal"
+                        style="transition-delay: 200ms;">
+                        <i class="fas fa-envelope mr-2"></i> <span data-lang-key="contact_email_button">Email Me</span>
+                    </a>
+                    <div class="flex justify-center space-x-6 mt-10 reveal" style="transition-delay: 300ms;">
+                        <a href="https://www.instagram.com/sudarshan__regmi/" target="_blank"
+                            class="text-secondary hover:text-accent transition duration-300">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                        <a href="https://x.com/sudarshanreg29" target="_blank"
+                            class="text-secondary hover:text-accent transition duration-300">
+                            <i class="fab fa-twitter text-3xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sudarshanregmi22" target="_blank"
+                            class="text-secondary hover:text-accent transition duration-300">
+                            <i class="fab fa-facebook text-3xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sudarshanregmi3/" target="_blank"
+                            class="text-secondary hover:text-accent transition duration-300">
+                            <i class="fab fa-linkedin text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-color">
+        <div class="container mx-auto px-6 py-6 text-center text-secondary">
+            <p data-lang-key="footer_text"> 2026 Sudarshan Regmi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
